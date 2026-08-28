@@ -1,0 +1,14 @@
+[Unit]
+Description=Calendar Guard - alertas de escritorio para eventos de Google Calendar
+Documentation=https://github.com/human-ufo/calendar-guard
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python3 %h/calendar-guard/calguard.py run
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=graphical-session.target
