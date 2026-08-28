@@ -1,0 +1,32 @@
+# Configuración de calguard.
+# Copiar a ~/.config/calguard/config.toml y ajustar.
+# Todas las claves son opcionales; los valores de acá son los defaults.
+
+# Ventana hacia adelante que se mira en cada chequeo.
+window_hours = 24
+
+# Frecuencia del daemon, en segundos (mínimo 5).
+poll_seconds = 60
+
+# Cuentas a monitorear. Vacío = todas las autenticadas en gog.
+accounts = [
+  # "tu.personal@gmail.com",
+]
+
+# Umbrales de alerta, en minutos antes del evento.
+# Se dispara una notificación por cada umbral cruzado.
+thresholds_minutes = [60, 15]
+
+# Si no está vacío, solo alertan eventos cuyo título contiene alguna palabra.
+# Ejemplo para entrevistas:
+# only_keywords = ["entrevista", "interview"]
+only_keywords = []
+
+# Eventos cuyo título contiene alguna de estas palabras nunca alertan.
+skip_keywords = []
+
+# Ignorar eventos de día completo (sin hora).
+skip_all_day = true
+
+# En false silencia las notificaciones (el daemon sigue registrando en el log).
+notify = true
